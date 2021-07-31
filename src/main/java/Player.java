@@ -9,5 +9,46 @@
  * @author ming
  */
 public class Player {
+    private char name;
+    private int win;
+    private int lose;
+    private int draw;
+    public Player(char name) {
+        this.name = name;
+    }
+
+    public char getName() {
+        return name;
+    }
+
+    public void setName(char name) {
+        this.name = name;
+    }
+
+    public int getWin() {
+        return win;
+    }
     
+    public void addWin() {
+        win++;
+    }
+    
+    public void addLose() {
+        lose++;
+    }
+    
+    public void addDraw() {
+        draw++;
+    }
+    
+    
+    public int getLose() {
+        return lose;
+    }
+
+
+    public int getDraw() {
+        return draw;
+    }
+
 }
