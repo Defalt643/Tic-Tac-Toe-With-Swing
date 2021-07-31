@@ -232,67 +232,103 @@ public class Main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    String row,col;
+    int row,col;
+    Table table = new Table();
     private void buttonTable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTable1ActionPerformed
-        row = "0";
-        col = "0";
+        row = 0;
+        col = 0;
        setDisplay(row,col);
+       addIntoTable(row,col);
+       buttonTable1.setText(getCurrentPlayer().getName());
     }//GEN-LAST:event_buttonTable1ActionPerformed
 
     private void buttonTable2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTable2ActionPerformed
-        row = "0";
-        col = "1";
+        row = 0;
+        col = 1;
        setDisplay(row,col);
+       addIntoTable(row,col);
+       buttonTable2.setText(getCurrentPlayer().getName());
     }//GEN-LAST:event_buttonTable2ActionPerformed
 
     private void buttonTable3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTable3ActionPerformed
-        row = "0";
-        col = "2";
+        row = 0;
+        col = 2;
        setDisplay(row,col);
+       addIntoTable(row,col);
+       buttonTable3.setText(getCurrentPlayer().getName());
     }//GEN-LAST:event_buttonTable3ActionPerformed
 
     private void buttonTable4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTable4ActionPerformed
-        row = "1";
-        col = "0";
+        row = 1;
+        col = 0;
         setDisplay(row,col);
+        addIntoTable(row,col);
+        buttonTable4.setText(getCurrentPlayer().getName());
     }//GEN-LAST:event_buttonTable4ActionPerformed
 
     private void buttonTable5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTable5ActionPerformed
-        row = "1";
-        col = "1";
+        row = 1;
+        col = 1;
         setDisplay(row,col);
+        addIntoTable(row,col);
+        buttonTable5.setText(getCurrentPlayer().getName());
     }//GEN-LAST:event_buttonTable5ActionPerformed
 
     private void buttonTable6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTable6ActionPerformed
-        row = "1";
-        col = "2";
+        row = 1;
+        col = 2;
         setDisplay(row,col);
+        addIntoTable(row,col);
+        buttonTable6.setText(getCurrentPlayer().getName());
     }//GEN-LAST:event_buttonTable6ActionPerformed
 
     private void buttonTable7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTable7ActionPerformed
-        row = "2";
-        col = "0";
+        row = 2;
+        col = 0;
         setDisplay(row,col);
+        addIntoTable(row,col);
+        buttonTable7.setText(getCurrentPlayer().getName());
     }//GEN-LAST:event_buttonTable7ActionPerformed
 
     private void buttonTable8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTable8ActionPerformed
-        row = "2";
-        col = "1";
+        row = 2;
+        col = 1;
         setDisplay(row,col);
+        addIntoTable(row,col);
+        buttonTable8.setText(getCurrentPlayer().getName());
     }//GEN-LAST:event_buttonTable8ActionPerformed
 
     private void buttonTable9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTable9ActionPerformed
-        row = "2";
-        col = "2";
+        row = 2;
+        col = 2;
         setDisplay(row,col);
+        addIntoTable(row,col);
+        buttonTable9.setText(getCurrentPlayer().getName());
     }//GEN-LAST:event_buttonTable9ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public void setDisplay(String row,String col){
-        displayRow.setText(row);
-        displayCol.setText(col);
+    Player playerX = new Player("X");
+    Player playerO = new Player("O");
+    int round=0;
+    public void addIntoTable(int row,int col){
+        int position[]={row,col};
+        if(round%2==0){
+            table.addIntoTable(playerX.getName(), position);
+        }else{
+            table.addIntoTable(playerO.getName(), position);
+        }
+        round++;
+    }
+    public void setDisplay(int row,int col){
+        displayRow.setText(Integer.toString(row));
+        displayCol.setText(Integer.toString(col));
+    }public Player getCurrentPlayer(){
+        if(round%2==0){
+           return playerX;
+        }return playerO;
+        
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

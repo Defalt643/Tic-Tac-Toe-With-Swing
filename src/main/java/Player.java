@@ -9,19 +9,19 @@
  * @author ming
  */
 public class Player {
-    private char name;
+    private String name;
     private int win;
     private int lose;
     private int draw;
-    public Player(char name) {
+    public Player(String name) {
         this.name = name;
     }
 
-    public char getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(char name) {
+    public void setName(String name) {
         this.name = name;
     }
 
