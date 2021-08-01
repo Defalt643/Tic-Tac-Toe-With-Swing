@@ -171,7 +171,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Y");
+        jLabel5.setText("O");
 
         scoreboardPlayerX.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         scoreboardPlayerX.setText("    0          0          0");
@@ -199,7 +199,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel7.setText("Version : Alpha 0.0.8");
+        jLabel7.setText("Version : Alpha 0.0.9");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -334,9 +334,8 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(textRow)
                         .addComponent(displayRow))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(displayErrorMessage)))
+                    .addComponent(displayErrorMessage)
+                    .addComponent(jLabel6))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 

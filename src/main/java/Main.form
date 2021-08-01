@@ -192,10 +192,8 @@
                       <Component id="textRow" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="displayRow" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="displayErrorMessage" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="displayErrorMessage" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="11" max="32767" attributes="0"/>
           </Group>
@@ -396,7 +394,7 @@
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Y"/>
+        <Property name="text" type="java.lang.String" value="O"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="scoreboardPlayerX">
@@ -464,7 +462,7 @@
           <Font name="Segoe UI" size="10" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="11"/>
-        <Property name="text" type="java.lang.String" value="Version : Alpha 0.0.8"/>
+        <Property name="text" type="java.lang.String" value="Version : Alpha 0.0.9"/>
       </Properties>
     </Component>
   </SubComponents>
