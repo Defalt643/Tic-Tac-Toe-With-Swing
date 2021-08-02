@@ -3,7 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/*
+⢸⣿⣿⣿⣿⣿⢹⣿⣿⣿⣿⣿⣿⣦⡻⣿⢧⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢹⣿⣿⣿⣿⣿⣿⣿⣿⣇⢿⣿⣿⣿⣿  
+  ⣾⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⣿⡆⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⣿⣿⠿⣿⡎⣿⣿⣿⣿⡇ 
+  ⣿⣿⣿⣿⣿⣿⡜⣿⣿⣿⣿⣿⣿⣿⡿⣹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⣿⣿⣿⣿⣿⣿⣿⣿⣿⢀⢻⣿⣿⣿⡿⠛⣡⣾⣿⣿⡜⣿⣿⣿⣇ 
+ ⢸⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⢟⣵⣟⣼⣿⣟⠻⣿⣿⣿⣿⣿⣿⣿⢁⢿⣿⣿⣿⣿⣿⣿⣿⡿⣼⣎⢿⠿⢋⣴⣿⣿⣿⣿⣿⣷⡹⣿⣿⣿ 
+ ⢸⣿⣿⣿⣿⣿⣿⣧⢻⣿⣿⣿⣟⣑⣚⢍⣾⣿⣿⣿⣷⣦⣙⠻⣿⣿⣿⢧⣿⡸⣿⣿⣿⣿⣿⣿⣿⢇⣿⠟⣀⢶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣜⠿⡟ 
+ ⢸⣿⣿⣿⣿⣿⣿⣿⡘⣿⣿⣿⡿⢟⣵⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡙⠣⣿⣿⣧⢻⣿⣿⣿⣿⣿⠏⠜⡡⠞⠛⠃⠙⠿⠿⣿⣿⣿⢿⣿⣿⠿⣫⠇ 
+ ⠈⣿⣿⣿⣿⣿⣿⡟⣷⢜⣫⣽⢞⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⠟⠵⠷⢬⡙⢿⡜⣿⢹⣿⣿⢏⣴⠊⣠⠶⠿⢷⣦⣄⠈⢙⣛⡛⣃⣐⣶⣾⠏  
+  ⣿⣿⣿⣿⣿⣿⣧⣿⣿⣔⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠂⣠⡤⠴⠦⢤⣙⣿⣧⠛⣼⠟⣡⣾⣿⣾⣿⡗  ⠹⣿⣆⠈⣙⡇⣿⣿⡿⠋   
+  ⢸⣿⣿⣿⣿⣿⣿⢉⣾⣿⣿⣿⣿⣿⣿⣿⡿⠿⠟⠃⢠⣾⣿⡷   ⠻⣿⣿⣴⣷⣿⣿⣿⣿⡇⠉    ⢻⣿⡆⢿⣇⠛⠉     
+  ⠘⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣶⣤⣲⣶⣾⠿⢀⣿⣿⠙⠁   ⡀⢻⣿⣿⣿⣿⣿⣿⣿⣧⠰⣄⣀⣠⡇⢸⣿⣧⢺⣿⡄      
+   ⣿⣿⣿⣿⣿⣿⡏⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⡇⢸⣿⣷⠠⣄⡀⢀⣰⡇⣸⣿⣿⣿⣿⣿⣿⣿⣿⣦⡙⠿⠿⣡⣿⢿⣿⡏⣿⣷⡀     
+   ⢻⣿⣿⣿⣿⣿⣿⣹⣿⣿⣿⣿⢏⣽⢸⣿⣿⣧⠘⣿⣿⣆⠙⠿⠿⢟⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣶⢲⢮⡿⣽⣷⣿⣿⣷     
+   ⣸⣿⣿⣿⣿⣿⣿⣧⢿⣿⣿⡏⣾⣯⡍⣿⣿⣿⡼⣯⣟⣛⣻⢶⢼⣟⣿⣿⣿⣿⣿⣿⣿⠿⠿⣿⣿⣿⠿⣫⣏⣾⢳⢳⢇⣿⣿⡿⡇    
+   ⣿⣟⣿⣿⣿⣿⣿⣿⣎⢿⣿⡇⣿⡿⡇⢻⣿⣿⣷⣝⠳⠷⢯⢏⣟⣾⡏⣙⣛⢛⣋⣥⣶⣶⣦⣄⡀⠐⠆⣿⣿⣿⣟⣫⢾⣿⣿⡇⠃    
+  ⡸⠋⣼⣿⣿⣿⣿⣿⣿⣿⣯⢿⣿⡜⠋⢀⡌⣿⣿⣿⣮⡩⢾⣯⣾⣿⣿⡇⣧⣣⣾⣿⣿⣿⣿⣿⣿⣿⣦ ⣿⣿⣿⣿⢏⣿⣿⠟⠁     
+   ⣸⣿⣿⣿⣿⣿⣿⣿⣿⢟⣽⣿⠃ ⣾⣿⡘⢿⣿⣿⣿⣷⡮⣹⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢱⣿⣿⣿⣋⠚⣩⡵⣸      
+  ⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⢦⣇ ⣿⣿⣿⣤⠓⠈⢽⣭⣾⣿⣿⣿⣷⡘⣿⣿⣿⣿⣿⣿⣿⣿⠟⣡⣿⣿⡿⢛⡁⠘⢛⣱⡇      
+  ⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡱⢿⣿⣦⡘⠿⠿⢟⣱⣶⣤⣽⡻⢿⣿⣿⣿⣿⣮⣙⠻⠿⠿⠟⣋⣡⣾⠿⢛⣥⣶⣿⣧⡀ ⠛       
+ ⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⣶⣻⣿⣿⡏⠛⠿⡟⣫⠁⠸⢭⣝⣛⣛⣛⠿⡟⠛⢋⣭⣥⣶⣾⡟⠛⠋⢉⣁ 
+ ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢛⣛⠓⠉⠛⠇⣀⣤⠶⢎⠠⠇ ⣀⠈⢉⡉⠉⢀⡀⠰ ⠉⠉⠉⠉
+ ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡎⡳⠂ ⣠⡾⣫⣶⣿⣿⣷⣦⣄⣉⣀⣈⣁⣀⣠⣤⣾⣶⣦⣄⡀ 
+*/
 /**
  *
  * @author ming
@@ -57,7 +79,7 @@ public class Main extends javax.swing.JFrame {
         newGameButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Tic Tac Toe(Alpha 0.0.8)");
+        setTitle("Tic Tac Toe(Alpha 0.1.2)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -210,7 +232,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel7.setText("Version : Alpha 0.0.9");
+        jLabel7.setText("Version : Alpha 0.1.2");
 
         newGameButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         newGameButton.setText("New Game");
