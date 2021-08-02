@@ -59,6 +59,16 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tic Tac Toe(Alpha 0.0.8)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                formMouseEntered(evt);
+            }
+        });
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -372,6 +382,7 @@ public class Main extends javax.swing.JFrame {
                 updateScore();
                 updateScoreboard();
                 gameStatus.setText("Game status : Ended");
+                newGameButton.setVisible(true);
             }
         }else{
             displayErrorMessage.setText("Sorry this position is already exist. "
@@ -381,6 +392,7 @@ public class Main extends javax.swing.JFrame {
             updateScoreboard();
             gameStatus.setText("Game status : Ended");
             displayWinner.setText("Winner : Draw");
+            newGameButton.setVisible(true);
         }
     }//GEN-LAST:event_buttonTable1ActionPerformed
 
@@ -400,6 +412,7 @@ public class Main extends javax.swing.JFrame {
                 updateScore();
                 updateScoreboard();
                 gameStatus.setText("Game status : Ended");
+                newGameButton.setVisible(true);
             }
         }else{
             displayErrorMessage.setText("Sorry this position is already exist. "
@@ -409,6 +422,7 @@ public class Main extends javax.swing.JFrame {
             updateScoreboard();
             gameStatus.setText("Game status : Ended");
             displayWinner.setText("Winner : Draw");
+            newGameButton.setVisible(true);
         }
 
     }//GEN-LAST:event_buttonTable2ActionPerformed
@@ -429,6 +443,7 @@ public class Main extends javax.swing.JFrame {
                 updateScore();
                 updateScoreboard();
                 gameStatus.setText("Game status : Ended");
+                newGameButton.setVisible(true);
             }
         }else{
             displayErrorMessage.setText("Sorry this position is already exist. "
@@ -438,6 +453,7 @@ public class Main extends javax.swing.JFrame {
             updateScoreboard();
             gameStatus.setText("Game status : Ended");
             displayWinner.setText("Winner : Draw");
+            newGameButton.setVisible(true);
         }
     }//GEN-LAST:event_buttonTable3ActionPerformed
 
@@ -457,6 +473,7 @@ public class Main extends javax.swing.JFrame {
                 updateScore();
                 updateScoreboard();
                 gameStatus.setText("Game status : Ended");
+                newGameButton.setVisible(true);
             }
         }else{
             displayErrorMessage.setText("Sorry this position is already exist. "
@@ -466,6 +483,7 @@ public class Main extends javax.swing.JFrame {
             updateScoreboard();
             gameStatus.setText("Game status : Ended");
             displayWinner.setText("Winner : Draw");
+            newGameButton.setVisible(true);
         }
     }//GEN-LAST:event_buttonTable4ActionPerformed
 
@@ -485,6 +503,7 @@ public class Main extends javax.swing.JFrame {
                 updateScore();
                 updateScoreboard();
                 gameStatus.setText("Game status : Ended");
+                newGameButton.setVisible(true);
             }
         }else{
             displayErrorMessage.setText("Sorry this position is already exist. "
@@ -494,6 +513,7 @@ public class Main extends javax.swing.JFrame {
             updateScoreboard();
             gameStatus.setText("Game status : Ended");
             displayWinner.setText("Winner : Draw");
+            newGameButton.setVisible(true);
         }
     }//GEN-LAST:event_buttonTable5ActionPerformed
 
@@ -513,6 +533,7 @@ public class Main extends javax.swing.JFrame {
                 updateScore();
                 updateScoreboard();
                 gameStatus.setText("Game status : Ended");
+                newGameButton.setVisible(true);
             }
         }else{
             displayErrorMessage.setText("Sorry this position is already exist. "
@@ -522,6 +543,7 @@ public class Main extends javax.swing.JFrame {
             updateScoreboard();
             gameStatus.setText("Game status : Ended");
             displayWinner.setText("Winner : Draw");
+            newGameButton.setVisible(true);
         }
     }//GEN-LAST:event_buttonTable6ActionPerformed
 
@@ -541,6 +563,7 @@ public class Main extends javax.swing.JFrame {
                 updateScore();
                 updateScoreboard();
                 gameStatus.setText("Game status : Ended");
+                newGameButton.setVisible(true);
             }
         }else{
             displayErrorMessage.setText("Sorry this position is already exist. "
@@ -550,6 +573,7 @@ public class Main extends javax.swing.JFrame {
             updateScoreboard();
             gameStatus.setText("Game status : Ended");
             displayWinner.setText("Winner : Draw");
+            newGameButton.setVisible(true);
         }
     }//GEN-LAST:event_buttonTable7ActionPerformed
 
@@ -569,6 +593,7 @@ public class Main extends javax.swing.JFrame {
                 updateScore();
                 updateScoreboard();
                 gameStatus.setText("Game status : Ended");
+                newGameButton.setVisible(true);
             }
         }else{
             displayErrorMessage.setText("Sorry this position is already exist. "
@@ -578,6 +603,7 @@ public class Main extends javax.swing.JFrame {
             updateScoreboard();
             gameStatus.setText("Game status : Ended");
             displayWinner.setText("Winner : Draw");
+            newGameButton.setVisible(true);
         }
     }//GEN-LAST:event_buttonTable8ActionPerformed
 
@@ -597,6 +623,7 @@ public class Main extends javax.swing.JFrame {
                 updateScore();
                 updateScoreboard();
                 gameStatus.setText("Game status : Ended");
+                newGameButton.setVisible(true);
             }
         }else{
             displayErrorMessage.setText("Sorry this position is already exist. "
@@ -606,10 +633,12 @@ public class Main extends javax.swing.JFrame {
             updateScoreboard();
             gameStatus.setText("Game status : Ended");
             displayWinner.setText("Winner : Draw");
+            newGameButton.setVisible(true);
         }
     }//GEN-LAST:event_buttonTable9ActionPerformed
 
     private void newGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameButtonActionPerformed
+        newGameButton.setVisible(false);
         table = new Table();
         resetTableButton();
         round=0;
@@ -621,6 +650,14 @@ public class Main extends javax.swing.JFrame {
                         + getCurrentPlayer(false).getName());
         
     }//GEN-LAST:event_newGameButtonActionPerformed
+
+    private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
+        
+    }//GEN-LAST:event_formMouseEntered
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        newGameButton.setVisible(false);
+    }//GEN-LAST:event_formWindowOpened
     public void resetTableButton(){
         buttonTable1.setText("-");
         buttonTable2.setText("-");
@@ -704,6 +741,8 @@ public class Main extends javax.swing.JFrame {
             return playerX;
         }
 
+    }public void setVisible(){
+        newGameButton.setVisible(false);
     }
 
     public static void main(String args[]) {
@@ -729,7 +768,7 @@ public class Main extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
