@@ -19,6 +19,8 @@ public class Table {
                 table[i][j] = "-";
             }
         }
+    }public int getRound(){
+        return round;
     }
 
     public boolean checkExist(int position[]) {

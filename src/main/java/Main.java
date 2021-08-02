@@ -54,6 +54,7 @@ public class Main extends javax.swing.JFrame {
         displayErrorMessage = new javax.swing.JLabel();
         gameStatus = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        newGameButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tic Tac Toe(Alpha 0.0.8)");
@@ -201,6 +202,14 @@ public class Main extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel7.setText("Version : Alpha 0.0.9");
 
+        newGameButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        newGameButton.setText("New Game");
+        newGameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newGameButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -226,8 +235,28 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonTable1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(buttonTable2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(displayRound, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(105, 105, 105)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(displayErrorMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(displayCurrentPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(93, 93, 93)
+                                .addComponent(jLabel3)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(buttonTable3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,34 +275,16 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(scoreboardPlayerO, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(scoreboardPlayerX, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(57, 57, 57))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(scoreboardPlayerX, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(buttonTable1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(buttonTable2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(displayRound, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(105, 105, 105)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(displayErrorMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap())
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(displayCurrentPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
-                                .addGap(94, 94, 94))))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(scoreboardPlayerO, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(newGameButton))))
+                        .addGap(57, 57, 57))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -293,10 +304,11 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(gameStatus)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(displayCurrentPlayer))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(displayCurrentPlayer))
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(displayScoreboard)
@@ -325,7 +337,8 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonTable7, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonTable9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonTable8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonTable8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newGameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -336,7 +349,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(displayRow))
                     .addComponent(displayErrorMessage)
                     .addComponent(jLabel6))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -346,7 +359,8 @@ public class Main extends javax.swing.JFrame {
     private void buttonTable1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTable1ActionPerformed
         row = 0;
         col = 0;
-        if(!table.getWinner().equals("None")){
+        if(gameStatus.getText().equals("Game status : Ended")){
+            displayErrorMessage.setText("Game is already ended. Please start a new game!");
             return;
         }
         displayErrorMessage.setText("None");
@@ -360,7 +374,13 @@ public class Main extends javax.swing.JFrame {
                 gameStatus.setText("Game status : Ended");
             }
         }else{
-            displayErrorMessage.setText("Sorry this position is already exist. Please try again!!");
+            displayErrorMessage.setText("Sorry this position is already exist. "
+                    + "Please try again!!");
+        }if(checkDraw()){
+            updateScore();
+            updateScoreboard();
+            gameStatus.setText("Game status : Ended");
+            displayWinner.setText("Winner : Draw");
         }
     }//GEN-LAST:event_buttonTable1ActionPerformed
 
@@ -368,7 +388,8 @@ public class Main extends javax.swing.JFrame {
         row = 0;
         col = 1;
         displayErrorMessage.setText("None");
-        if(!table.getWinner().equals("None")){
+        if(gameStatus.getText().equals("Game status : Ended")){
+            displayErrorMessage.setText("Game is already ended. Please start a new game!");
             return;
         }
         if(addIntoTable(row, col)){
@@ -381,7 +402,13 @@ public class Main extends javax.swing.JFrame {
                 gameStatus.setText("Game status : Ended");
             }
         }else{
-            displayErrorMessage.setText("Sorry this position is already exist. Please try again!!");
+            displayErrorMessage.setText("Sorry this position is already exist. "
+                    + "Please try again!!");
+        }if(checkDraw()){
+            updateScore();
+            updateScoreboard();
+            gameStatus.setText("Game status : Ended");
+            displayWinner.setText("Winner : Draw");
         }
 
     }//GEN-LAST:event_buttonTable2ActionPerformed
@@ -390,7 +417,8 @@ public class Main extends javax.swing.JFrame {
         row = 0;
         col = 2;
         displayErrorMessage.setText("None");
-        if(!table.getWinner().equals("None")){
+        if(gameStatus.getText().equals("Game status : Ended")){
+            displayErrorMessage.setText("Game is already ended. Please start a new game!");
             return;
         }
         if(addIntoTable(row, col)){
@@ -403,7 +431,13 @@ public class Main extends javax.swing.JFrame {
                 gameStatus.setText("Game status : Ended");
             }
         }else{
-            displayErrorMessage.setText("Sorry this position is already exist. Please try again!!");
+            displayErrorMessage.setText("Sorry this position is already exist. "
+                    + "Please try again!!");
+        }if(checkDraw()){
+            updateScore();
+            updateScoreboard();
+            gameStatus.setText("Game status : Ended");
+            displayWinner.setText("Winner : Draw");
         }
     }//GEN-LAST:event_buttonTable3ActionPerformed
 
@@ -411,7 +445,8 @@ public class Main extends javax.swing.JFrame {
         row = 1;
         col = 0;
         displayErrorMessage.setText("None");
-        if(!table.getWinner().equals("None")){
+        if(gameStatus.getText().equals("Game status : Ended")){
+            displayErrorMessage.setText("Game is already ended. Please start a new game!");
             return;
         }
         if(addIntoTable(row, col)){
@@ -424,7 +459,13 @@ public class Main extends javax.swing.JFrame {
                 gameStatus.setText("Game status : Ended");
             }
         }else{
-            displayErrorMessage.setText("Sorry this position is already exist. Please try again!!");
+            displayErrorMessage.setText("Sorry this position is already exist. "
+                    + "Please try again!!");
+        }if(checkDraw()){
+            updateScore();
+            updateScoreboard();
+            gameStatus.setText("Game status : Ended");
+            displayWinner.setText("Winner : Draw");
         }
     }//GEN-LAST:event_buttonTable4ActionPerformed
 
@@ -432,7 +473,8 @@ public class Main extends javax.swing.JFrame {
         row = 1;
         col = 1;
         displayErrorMessage.setText("None");
-        if(!table.getWinner().equals("None")){
+        if(gameStatus.getText().equals("Game status : Ended")){
+            displayErrorMessage.setText("Game is already ended. Please start a new game!");
             return;
         }
         if(addIntoTable(row, col)){
@@ -445,7 +487,13 @@ public class Main extends javax.swing.JFrame {
                 gameStatus.setText("Game status : Ended");
             }
         }else{
-            displayErrorMessage.setText("Sorry this position is already exist. Please try again!!");
+            displayErrorMessage.setText("Sorry this position is already exist. "
+                    + "Please try again!!");
+        }if(checkDraw()){
+            updateScore();
+            updateScoreboard();
+            gameStatus.setText("Game status : Ended");
+            displayWinner.setText("Winner : Draw");
         }
     }//GEN-LAST:event_buttonTable5ActionPerformed
 
@@ -453,7 +501,8 @@ public class Main extends javax.swing.JFrame {
         row = 1;
         col = 2;
         displayErrorMessage.setText("None");
-        if(!table.getWinner().equals("None")){
+        if(gameStatus.getText().equals("Game status : Ended")){
+            displayErrorMessage.setText("Game is already ended. Please start a new game!");
             return;
         }
         if(addIntoTable(row, col)){
@@ -466,7 +515,13 @@ public class Main extends javax.swing.JFrame {
                 gameStatus.setText("Game status : Ended");
             }
         }else{
-            displayErrorMessage.setText("Sorry this position is already exist. Please try again!!");
+            displayErrorMessage.setText("Sorry this position is already exist. "
+                    + "Please try again!!");
+        }if(checkDraw()){
+            updateScore();
+            updateScoreboard();
+            gameStatus.setText("Game status : Ended");
+            displayWinner.setText("Winner : Draw");
         }
     }//GEN-LAST:event_buttonTable6ActionPerformed
 
@@ -474,7 +529,8 @@ public class Main extends javax.swing.JFrame {
         row = 2;
         col = 0;
         displayErrorMessage.setText("None");
-        if(!table.getWinner().equals("None")){
+        if(gameStatus.getText().equals("Game status : Ended")){
+            displayErrorMessage.setText("Game is already ended. Please start a new game!");
             return;
         }
         if(addIntoTable(row, col)){
@@ -487,7 +543,13 @@ public class Main extends javax.swing.JFrame {
                 gameStatus.setText("Game status : Ended");
             }
         }else{
-            displayErrorMessage.setText("Sorry this position is already exist. Please try again!!");
+            displayErrorMessage.setText("Sorry this position is already exist. "
+                    + "Please try again!!");
+        }if(checkDraw()){
+            updateScore();
+            updateScoreboard();
+            gameStatus.setText("Game status : Ended");
+            displayWinner.setText("Winner : Draw");
         }
     }//GEN-LAST:event_buttonTable7ActionPerformed
 
@@ -495,7 +557,8 @@ public class Main extends javax.swing.JFrame {
         row = 2;
         col = 1;
         displayErrorMessage.setText("None");
-        if(!table.getWinner().equals("None")){
+        if(gameStatus.getText().equals("Game status : Ended")){
+            displayErrorMessage.setText("Game is already ended. Please start a new game!");
             return;
         }
         if(addIntoTable(row, col)){
@@ -508,7 +571,13 @@ public class Main extends javax.swing.JFrame {
                 gameStatus.setText("Game status : Ended");
             }
         }else{
-            displayErrorMessage.setText("Sorry this position is already exist. Please try again!!");
+            displayErrorMessage.setText("Sorry this position is already exist. "
+                    + "Please try again!!");
+        }if(checkDraw()){
+            updateScore();
+            updateScoreboard();
+            gameStatus.setText("Game status : Ended");
+            displayWinner.setText("Winner : Draw");
         }
     }//GEN-LAST:event_buttonTable8ActionPerformed
 
@@ -516,7 +585,8 @@ public class Main extends javax.swing.JFrame {
         row = 2;
         col = 2;
         displayErrorMessage.setText("None");
-        if(!table.getWinner().equals("None")){
+        if(gameStatus.getText().equals("Game status : Ended")){
+            displayErrorMessage.setText("Game is already ended. Please start a new game!");
             return;
         }
         if(addIntoTable(row, col)){
@@ -529,10 +599,45 @@ public class Main extends javax.swing.JFrame {
                 gameStatus.setText("Game status : Ended");
             }
         }else{
-            displayErrorMessage.setText("Sorry this position is already exist. Please try again!!");
+            displayErrorMessage.setText("Sorry this position is already exist. "
+                    + "Please try again!!");
+        }if(checkDraw()){
+            updateScore();
+            updateScoreboard();
+            gameStatus.setText("Game status : Ended");
+            displayWinner.setText("Winner : Draw");
         }
     }//GEN-LAST:event_buttonTable9ActionPerformed
 
+    private void newGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameButtonActionPerformed
+        table = new Table();
+        resetTableButton();
+        round=0;
+        displayRound.setText("Round : "+(round+1));
+        table.winnerName="None";
+        displayWinner.setText("Winner : "+table.getWinner());
+        gameStatus.setText("Game status : Running");
+        displayCurrentPlayer.setText("Current Player : Player " 
+                        + getCurrentPlayer(false).getName());
+        
+    }//GEN-LAST:event_newGameButtonActionPerformed
+    public void resetTableButton(){
+        buttonTable1.setText("-");
+        buttonTable2.setText("-");
+        buttonTable3.setText("-");
+        buttonTable4.setText("-");
+        buttonTable5.setText("-");
+        buttonTable6.setText("-");
+        buttonTable7.setText("-");
+        buttonTable8.setText("-"); 
+        buttonTable9.setText("-");
+    }
+    public Boolean checkDraw(){
+        if(table.getRound()==9&&table.getWinner().equals("None")){
+            System.out.println("Draw");
+            return true;
+        }return false;
+    }
     /**
      * @param args the command line arguments
      */
@@ -546,7 +651,7 @@ public class Main extends javax.swing.JFrame {
         } else if (table.getWinner().equals("O")) {
             playerO.addWin();
             playerX.addLose();
-        } else if (table.round == 9) {
+        } else if (table.getRound() == 9) {
             playerX.addDraw();
             playerO.addDraw();
         }
@@ -658,6 +763,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JButton newGameButton;
     private javax.swing.JLabel scoreboardPlayerO;
     private javax.swing.JLabel scoreboardPlayerX;
     private javax.swing.JLabel textCol;
