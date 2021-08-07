@@ -8,15 +8,15 @@ import java.util.logging.Logger;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author ming
  */
 public class Write {
+
     public static void main(String[] args) throws IOException {
         File file = null;
-        FileOutputStream fos =null;
+        FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         Player x = new Player("X");
         Player o = new Player("O");
@@ -34,11 +34,11 @@ public class Write {
             System.out.println(o);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Write.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
-            try{
+        } finally {
+            try {
                 fos.close();
                 oos.close();
-            }catch(IOException ex){
+            } catch (IOException ex) {
                 Logger.getLogger(Write.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

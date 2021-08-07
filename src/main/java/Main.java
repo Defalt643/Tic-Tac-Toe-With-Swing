@@ -30,12 +30,16 @@
  *
  * @author ming
  */
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Main extends javax.swing.JFrame {
 
     /**
      * Creates new form Main
      */
     public Main() {
+        loadData();
         initComponents();
     }
 
@@ -681,6 +685,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseEntered
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        updateScoreboard();
         newGameButton.setVisible(false);
     }//GEN-LAST:event_formWindowOpened
     public void resetTableButton(){
@@ -716,7 +721,7 @@ public class Main extends javax.swing.JFrame {
         } else if (table.getRound() == 9) {
             playerX.addDraw();
             playerO.addDraw();
-        }
+        }saveData();
     }public void updateScoreboard(){
         scoreboardPlayerX.setText("    "+playerX.getWin()+"          "
                 +playerX.getLose()+"          "+playerX.getDraw());
@@ -768,6 +773,38 @@ public class Main extends javax.swing.JFrame {
 
     }public void setVisible(){
         newGameButton.setVisible(false);
+    }public void saveData(){
+        File file = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+            file = new File("Result.bin");
+            fos = new FileOutputStream(file);
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(playerX);
+            oos.writeObject(playerO);
+            fos.close();
+            oos.close();
+            System.out.println(playerX);
+            System.out.println(playerO);
+        } catch(Exception ex){
+            Logger.getLogger(Read.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }public void loadData(){
+        File file = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            file = new File("Result.bin");
+            fis = new FileInputStream(file);
+            ois = new ObjectInputStream(fis);
+            playerX=(Player) ois.readObject();
+            playerO=(Player) ois.readObject();
+            ois.close();
+            fis.close();
+        }catch (Exception ex){
+            Logger.getLogger(Read.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public static void main(String args[]) {
