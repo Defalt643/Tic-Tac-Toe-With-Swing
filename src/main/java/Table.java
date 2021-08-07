@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.io.*;
 /**
  *
  * @author ming
  */
-public class Table {
+public class Table implements Serializable{
     String table[][] = new String[3][3];
     String winnerName = "None";
     public int round = 0;

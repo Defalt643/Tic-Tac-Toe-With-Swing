@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.io.*;
 /**
  *
  * @author ming
  */
-public class Player {
+public class Player implements Serializable{
     private String name;
     private int win;
     private int lose;
@@ -49,6 +49,11 @@ public class Player {
 
     public int getDraw() {
         return draw;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + ", win=" + win + ", lose=" + lose + ", draw=" + draw + '}';
     }
 
 }
